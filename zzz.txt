@@ -1,5 +1,24 @@
 pip install flask
+ Для создания вебсервера и управления запросами
+
 pip install python-dotenv
+
 pip install flask-sqlalchemy
+Упрощенное управление базой данных
+
 pip install flask-migrate
 pip install pymysql
+
+(Alembic-    Для управления миграциями базы данных)
+(Pydentic-Для сериализации и валидации данных)
+
+
+
+
+#flask db init
+flask db migrate -m "Initial database"
+flask db upgrade
+
+flask db migrate -m "added created_add column to Questions"
+flask db upgrade  — применяется для внесения всех миграций до самой последней версии.
+flask db downgrade  — откатывает миграцию на одну версию назад.

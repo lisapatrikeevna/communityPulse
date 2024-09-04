@@ -1,4 +1,6 @@
-from __init__ import db
+from datetime import datetime
+
+from community_app import db
 
 
 class Question(db.Model):
@@ -6,6 +8,7 @@ class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(300), nullable=False)
     responses = db.relationship('Responses', backref='question', lazy='dynamic')
+    created_at = db.Column(db.DateTime, default = datetime.utcnow)
 
     def __str__(self):
         return self.text
