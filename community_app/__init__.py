@@ -3,7 +3,7 @@ import dotenv
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-from config import DevelopmentConfig, ProductionConfig, TestingConfig
+from config import DevelopmentConfig, ProductionConfig, TestingConfig ,Config
 from community_app.routes.questions import questions_bp
 from community_app.routes.responses import response_bp
 

@@ -12,13 +12,27 @@ pip install pymysql
 (Alembic-    Для управления миграциями базы данных)
 (Pydentic-Для сериализации и валидации данных)
 
+ Alembic Это инструмент миграции базы данных для Python, работающий с SQLAlchemy и предоставляющий полный контроль над миграциями через механизм версий.
+
+Flask-Migrate Упрощает использование Alembic в проектах на Flask, добавляя команды для Flask-скриптов и интегрируясь с конфигурациями Flaskприложения.
 
 
 
-#flask db init
-flask db migrate -m "Initial database"
-flask db upgrade
+
+
+
+
+
+
+
+
+flask db init    # Инициализирует миграции
+flask db migrate -m "Initial database"   # Создает файлы миграции
+flask db upgrade     # Применяет миграции к базе данных
 
 flask db migrate -m "added created_add column to Questions"
 flask db upgrade  — применяется для внесения всех миграций до самой последней версии.
 flask db downgrade  — откатывает миграцию на одну версию назад.
+
+flask db migrate -m "Create category and update question models"
+flask db upgrade

@@ -5,7 +5,7 @@ from flask import Blueprint
 questions_bp = Blueprint('questions', __name__, url_prefix='/questions')
 
 
-@questions_bp.route('/')  # url/questions
+@questions_bp.route('/', methods = ['GET'])  # url/questions
 def get_all_questions():
     return "get all questions"
 
