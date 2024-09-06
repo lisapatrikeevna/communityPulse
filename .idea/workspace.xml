@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/.eslintrc.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.prettierrc.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.stylelintrc.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/questions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/questionsList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/questions-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/store.ts" afterDir="false" />
+    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="add react">
+      <change afterPath="$PROJECT_DIR$/client/src/services/app.slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/base-api-with-refetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/base-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/base-query-with-reauth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/questionsWrap/questions.servies.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/questionsWrap/questions.slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/questions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/questions-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/questions-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community_app/routes/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/routes/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +30,7 @@
       <list>
         <option value="Flask Main" />
         <option value="Python Script" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -71,6 +75,7 @@
       <recent name="$PROJECT_DIR$/com_app/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/services" />
       <recent name="$PROJECT_DIR$/com_app" />
     </key>
   </component>
@@ -83,7 +88,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -142,10 +147,47 @@
       <updated>1725274604301</updated>
       <workItem from="1725274608095" duration="19744000" />
     </task>
+    <task id="LOCAL-00001" summary="add react">
+      <option name="closed" value="true" />
+      <created>1725654718743</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725654718743</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add react">
+      <option name="closed" value="true" />
+      <created>1725654746040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725654746040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="7ed2d02a-ed67-48c1-a2a1-aede1f92e056" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="7ed2d02a-ed67-48c1-a2a1-aede1f92e056">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add react" />
+    <option name="LAST_COMMIT_MESSAGE" value="add react" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -173,6 +215,11 @@
           <url>file://$PROJECT_DIR$/community_app/__init__.py</url>
           <line>18</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/questions.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

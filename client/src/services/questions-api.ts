@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-
 // questions-api.ts
 
+
+const baseUrl =  'http://localhost:5000/api'
 // builder.query принимает 2 generic параметра:
 // Первый - результат запроса (данные)
 // Второй - аргументы, которые будет принимать хук. Если хук не принимает аргументов нужно указать void ("пустота")
@@ -11,7 +12,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const questionsApi = createApi({
   reducerPath: 'questionsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api',  // Указываем корректный URL для API
+    baseUrl,
     credentials: 'include',
     prepareHeaders: headers => {
       headers.append('x-auth-skip', 'true');

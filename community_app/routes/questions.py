@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, make_response
+from flask import jsonify, request, make_response, Blueprint
 
 from community_app import db
 from community_app.models.questions import Question
@@ -13,7 +13,8 @@ def get_all_questions():
 
     questions_data: list[dict] = [{"id": question.id, "text": question.text, "created_at": question.created_at} for question in questions]
 
-    return jsonify(questions)
+    # return jsonify(questions)
+    return jsonify(questions_data)
 
 
 @questions_bp.route('/add', methods=['POST'])
