@@ -9,6 +9,7 @@ from community_app.routes.questions import questions_bp
 from community_app.routes.responses import response_bp
 from config import DevelopmentConfig, ProductionConfig, TestingConfig
 import logging
+from flask_cors import CORS
 
 #  __init__.py
 
@@ -28,6 +29,8 @@ configSetUp = {"development": DevelopmentConfig, "production": ProductionConfig,
 
 def create_app():
     app = Flask(__name__)
+    # CORS(app)  # Включение CORS для всех доменов
+    CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
     app.config.from_object(configSetUp)
     db.init_app(app)
     migrate.init_app(app, db)

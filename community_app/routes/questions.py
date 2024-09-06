@@ -4,7 +4,7 @@ from community_app import db
 from community_app.models.questions import Question
 
 # routes/questions.py
-questions_bp = Blueprint('questions', __name__, url_prefix='/questions')
+questions_bp = Blueprint('questions', __name__, url_prefix='/api/questions')
 
 
 @questions_bp.route('/', methods=['GET'])  # url/questions
