@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from config import DevelopmentConfig, ProductionConfig, TestingConfig ,Config
 from community_app.routes.questions import questions_bp
 from community_app.routes.responses import response_bp
+from community_app.routes.category import category_bp
 
 #  __init__.py
 migrate = Migrate()
@@ -15,20 +16,20 @@ configName = os.getenv('Flask_ENV')
 
 configSetUp = {"development": DevelopmentConfig, "production": ProductionConfig, "testing": TestingConfig, }.get(configName)
 
+app = Flask(__name__)
+app.register_blueprint(questions_bp)
+app.register_blueprint(response_bp)
+app.register_blueprint(category_bp)
+
+
 
 def create_app():
-# def create_app(configName):
     app = Flask(__name__)
-    app.config.from_object(DevelopmentConfig)
+    app.config.from_object(configSetUp)
     db.init_app(app)
     migrate.init_app(app, db)
 
-    app.register_blueprint(questions_bp) 
-    app.register_blueprint(response_bp)
-
     return app
-#
-# @app.route('/')
-# def hello_world():  # put application's code here
-#     return 'Hello World!'
+
+
 
