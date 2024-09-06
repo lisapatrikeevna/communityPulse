@@ -1,4 +1,4 @@
-from community_app import db
+from community_app.extensions import db  # Импорт из extensions
 
 
 class Response(db.Model):

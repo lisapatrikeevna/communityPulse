@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="3 lesson">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community_app/models/category.py" afterDir="false" />
+    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="mistakes before lesson">
+      <change afterPath="$PROJECT_DIR$/community_app/extensions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instance/databaseCommunuity.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/communityPluse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/communityPluse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_app/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community_app/models/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community_app/models/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/routes/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/routes/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/zzz.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +33,17 @@
       </list>
     </option>
   </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -38,9 +52,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "lisapatrikeevna"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:lisapatrikeevna/communityPulse.git",
+    "accountId": "fe2ea37c-aeb9-45af-9bef-e6fa526cbc23"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2lVoSTJLwIGjkvNq7knl0DX3mil" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -50,23 +76,27 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Flask server.Flask (app.py).executor": "Run",
+    "Flask server.Flask (community_app/__init__.py).executor": "Run",
+    "Flask server.communityPluse.executor": "Run",
     "Python.__init__.executor": "Run",
     "Python.app.executor": "Run",
     "Python.config.executor": "Run",
     "Python.questions.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "lisa",
-    "last_opened_file_path": "/Users/natalybondarenko/D/work/python/communityPluse/com_app/models",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/natalybondarenko/D/work/pythonCurs/communityPluse/community_app/routes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/community_app/routes" />
       <recent name="$PROJECT_DIR$/com_app/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -108,6 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725274604301</updated>
       <workItem from="1725274608095" duration="43753000" />
+      <workItem from="1725565712339" duration="15666000" />
     </task>
     <task id="LOCAL-00001" summary="2 lesson">
       <option name="closed" value="true" />
@@ -125,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725470302871</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mistakes before lesson">
+      <option name="closed" value="true" />
+      <created>1725612035675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725612035675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,28 +173,46 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2 lesson" />
     <MESSAGE value="3 lesson" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 lesson" />
+    <MESSAGE value="mistakes before lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="mistakes before lesson" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/community_app/routes/questions.py</url>
-          <line>7</line>
+          <line>9</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/community_app/models/category.py</url>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/community_app/__init__.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/community_app/__init__.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/community_app/__init__.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/communityPluse$config.coverage" NAME="config Coverage Results" MODIFIED="1725436821021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/communityPluse$Flask__community_app___init___py_.coverage" NAME="Flask (community_app/__init__.py) Coverage Results" MODIFIED="1725608618905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/communityPluse$config.coverage" NAME="config Coverage Results" MODIFIED="1725615479008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/communityPluse$app.coverage" NAME="app Coverage Results" MODIFIED="1725437312387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/communityPluse$questions.coverage" NAME="questions Coverage Results" MODIFIED="1725319707842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/communityPluse$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1725459352781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/communityPluse$questions.coverage" NAME="questions Coverage Results" MODIFIED="1725609960060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/community_app/routes" />
+    <SUITE FILE_PATH="coverage/communityPluse$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1725616326329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/communityPluse$communityPluse.coverage" NAME="communityPluse Coverage Results" MODIFIED="1725565923917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/communityPluse$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1725437307737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/community_app" />
   </component>
 </project>

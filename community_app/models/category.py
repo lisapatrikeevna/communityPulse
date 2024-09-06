@@ -1,4 +1,4 @@
-from community_app import db
+from community_app.extensions import db  # Импорт из extensions
 
 # category.py
 class Category(db.Model):
