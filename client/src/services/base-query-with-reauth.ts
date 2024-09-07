@@ -9,7 +9,7 @@ import { Mutex } from 'async-mutex'
 const mutex = new Mutex()
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://api.flashcards.andrii.es',
+  baseUrl: 'https://localhost:5000/api',
   credentials: 'include',
 })
 

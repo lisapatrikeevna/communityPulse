@@ -1,7 +1,7 @@
 import { baseApi } from "../base-api.ts";
 
 export type CreatQuestionsArgs = {
-  id:number
+  id?:number
   text:string
   responses?:any
   created_at?:any
@@ -14,7 +14,6 @@ const questionsServiece = baseApi.injectEndpoints({
     return {
       createQuestions: builder.mutation<void, CreatQuestionsArgs>({
         query: arg => {
-          // return {body: arg, method: 'POST', url: 'v1/decks'}
           return {body: arg, method: 'POST', url: `${baseUrl}/add`}
         },
         invalidatesTags: ['Questions'],

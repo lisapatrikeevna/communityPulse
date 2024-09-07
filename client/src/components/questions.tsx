@@ -1,26 +1,65 @@
 import { ChangeEvent, useState } from "react";
-import { Button, Paper, TextField } from "@mui/material";
+import { Box, Button, Paper, TextField } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
+import cl from './question.module.scss'
+import { useCreateQuestionsMutation } from "../services/questionsWrap/questions.servies.ts";
 
+
+// questions.tsx
 const Questions = () => {
   const [question, setQuestion] = useState('');
-  // useCreateQuestionsMutation
+  const [addQuestion, {isLoading, isError }] = useCreateQuestionsMutation()
+  // const addNewQuestion = () => {
+  //   addQuestion.then(() =>).catch(err()=>
+  //   {`some error: ${err}`}
+  // )
+  // }
+  const addNewQuestion = async () => {
+    try {
+      // Вызовите функцию addQuestion с переданными данными
+      await addQuestion({ text: question });
+      // Очистить вопрос после добавления
+      setQuestion('');
+    } catch (err) {
+      console.error(`Error while adding question: ${err}`);
+    }
+  };
 
 
-
-  return (<Paper>                                 ˚
-    <TextField
-      required
-      id="outlined-required"
-      label="Required"
-      defaultValue="Hren wam"
-      value={question}
-      onChange={(e:ChangeEvent<HTMLInputElement>) => setQuestion(e.currentTarget.value)}
-    />
-    <Button variant="outlined" startIcon={<SendIcon />}>
-      Delete
-    </Button>
-  </Paper>);
+  return <>
+    <Paper className={cl.wrapp}>
+      <p>add Questions </p>
+      <Box className={cl.inputWrap}>
+        <TextField
+          className={cl.newQuestion}
+          required
+          id="outlined-required"
+          label="Required"
+          value={question}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setQuestion(e.currentTarget.value)}
+        />
+        <Button className={cl.addQuestion} variant="outlined" startIcon={<SendIcon/>} disabled={isLoading} onClick={addNewQuestion}>
+          Send
+        </Button>
+      </Box>
+      {isError && <p className={cl.error}>An error occurred while sending the question.</p>}
+    </Paper>
+  </>
 };
 
 export default Questions;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

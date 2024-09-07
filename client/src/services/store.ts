@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import { questionsApi } from "./questions-api.ts";
+import { questionsApi } from "./questions-api.ts";
 import { baseApi } from "./base-api.ts";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { questionsReducer } from "./questionsWrap/questions.slice.ts";
@@ -10,13 +10,14 @@ export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer ,
     // [questionsApi.reducerPath]: questionsApi.reducer,
-    questions: questionsReducer,
+    // questions: questionsReducer,
     // responses: responsesApi.reducer,
     // categories: categoriesApi.reducer
   },
 
 })
 setupListeners(store.dispatch)
+
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 

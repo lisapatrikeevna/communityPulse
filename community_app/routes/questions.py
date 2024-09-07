@@ -23,10 +23,11 @@ def add_new_question():
 
     if not data or 'text' not in data:
         return jsonify({'message': "NO DATA Provided"}, 400)
-        question: Questions = Questions(text=data['text'])
 
-        db.session.add(question)
-        db.session.commit()
+    question: Question = Question(text=data['text'])
+
+    db.session.add(question)
+    db.session.commit()
 
     return jsonify({"message": "NEW QUESTION ADDED", "question_id": question.id}), 201
 

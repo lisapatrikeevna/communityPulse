@@ -1,7 +1,7 @@
 import { BaseQueryFn, FetchArgs, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query'
 import { Mutex } from 'async-mutex'
 
-const baseUrl = 'http://localhost:3333'
+const baseUrl = 'http://localhost:5000/api'
 
 // Create a new mutex
 const mutex = new Mutex()
