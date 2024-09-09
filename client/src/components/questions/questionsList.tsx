@@ -1,4 +1,4 @@
-import { useGetQuestionsQuery } from "../services/questions-api.ts";
+import { useGetQuestionsQuery } from "../../services/questions-api.ts";
 
 
 interface Question {

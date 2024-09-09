@@ -1,24 +1,41 @@
 import { baseApi } from "../base-api.ts";
 
 export type CreatQuestionsArgs = {
-  id?:number
-  text:string
-  responses?:any
-  created_at?:any
-  category_id?:any
+  id?: number
+  text: string
+  responses?: any
+  created_at?: any
+  category_id?: any
 }
-const baseUrl =  'http://localhost:5000/api'
+const baseUrl = 'http://localhost:5000/api'
 
-const questionsServiece = baseApi.injectEndpoints({
+const questionsService = baseApi.injectEndpoints({
   endpoints: builder => {
     return {
       createQuestions: builder.mutation<void, CreatQuestionsArgs>({
         query: arg => {
-          return {body: arg, method: 'POST', url: `${baseUrl}/add`}
-        },
-        invalidatesTags: ['Questions'],
-      }),
-      // updateDeck: builder.mutation<void, {id: string, body: UpdateDecksArgs}>({
+          // return {
+          //   body: arg,
+          //   method: 'POST',
+          //   url: `${baseUrl}/questions/add`,
+          //   headers: { 'Content-Type': 'application/json' }
+          // };
+          // Лог аргументов запроса
+          console.log('Arguments received in createQuestions:', arg);
+
+          const request = {
+            body: JSON.stringify(arg),  // Не забудьте сериализовать тело запроса
+            method: 'POST',
+            url: `${baseUrl}/questions/add`,
+            headers: { 'Content-Type': 'application/json' }
+          };
+
+          // Лог перед отправкой запроса
+          console.log('Request prepared:', request);
+
+          return request;
+        }, invalidatesTags: ['Questions'],
+      }), // updateDeck: builder.mutation<void, {id: string, body: UpdateDecksArgs}>({
       //   //pissimistik Update
       //   // onQueryStarted: async({id: string, ...body}, {dispatch, getState, queryFulfilled}) => {
       //   //   // onQueryStarted:async (arg: QueryArg, api: MutationLifecycleApi<QueryArg, BaseQuery, ResultType, ReducerPath>): Promise<void> | void =>{
@@ -54,5 +71,5 @@ const questionsServiece = baseApi.injectEndpoints({
 })
 
 // export const {useRemoveDeckMutation, useCreateDeckMutation, useGetDeckByIdQuery, useGetDecksQuery, useUpdateDeckMutation} = decksServiece
-export const {useCreateQuestionsMutation} = questionsServiece
+export const {useCreateQuestionsMutation} = questionsService
 

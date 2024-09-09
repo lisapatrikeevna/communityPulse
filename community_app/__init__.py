@@ -30,7 +30,8 @@ configSetUp = {"development": DevelopmentConfig, "production": ProductionConfig,
 def create_app():
     app = Flask(__name__)
     # CORS(app)  # Включение CORS для всех доменов
-    CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})# Разрешить запросы с React
+    CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+    # CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})# Разрешить запросы с React
     app.config.from_object(configSetUp)
     db.init_app(app)
     migrate.init_app(app, db)

@@ -3,45 +3,22 @@ import {
   FetchArgs,
   FetchBaseQueryError,
   fetchBaseQuery,
-} from '@reduxjs/toolkit/query/react'
-import { Mutex } from 'async-mutex'
-
-const mutex = new Mutex()
+} from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://localhost:5000/api',
+  baseUrl: 'http://127.0.0.1:5000/api',
   credentials: 'include',
-})
+});
 
 export const baseQueryWithReauth: BaseQueryFn<
   FetchArgs | string,
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
-  await mutex.waitForUnlock()
-  let result = await baseQuery(args, api, extraOptions)
-
-  if (result.error && result.error.status === 401) {
-    if (!mutex.isLocked()) {
-      const release = await mutex.acquire()
-      // try to get a new token
-      const refreshResult = await baseQuery(
-        { method: 'POST', url: '/v1/auth/refresh-token' },
-        api,
-        extraOptions
-      )
-
-      if (refreshResult.meta?.response?.status === 204) {
-        // retry the initial query
-        result = await baseQuery(args, api, extraOptions)
-      }
-      release()
-    } else {
-      // wait until the mutex is available without locking it
-      await mutex.waitForUnlock()
-      result = await baseQuery(args, api, extraOptions)
-    }
+  try {
+    return await baseQuery(args, api, extraOptions);
+  } catch (error) {
+    console.error('Error during base query:', error);
+    throw error;
   }
-
-  return result
-}
+};

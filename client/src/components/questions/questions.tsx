@@ -2,29 +2,32 @@ import { ChangeEvent, useState } from "react";
 import { Box, Button, Paper, TextField } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import cl from './question.module.scss'
-import { useCreateQuestionsMutation } from "../services/questionsWrap/questions.servies.ts";
+import { useCreateQuestionsMutation } from "../../services/questionsWrap/questions.servies.ts";
 
 
 // questions.tsx
 const Questions = () => {
   const [question, setQuestion] = useState('');
   const [addQuestion, {isLoading, isError }] = useCreateQuestionsMutation()
-  // const addNewQuestion = () => {
-  //   addQuestion.then(() =>).catch(err()=>
-  //   {`some error: ${err}`}
-  // )
-  // }
+  // const addNewQuestion = async () => {
+  //   try {
+  //     // Вызовите функцию addQuestion с переданными данными
+  //     await addQuestion({ text: question });
+  //     // Очистить вопрос после добавления
+  //     // setQuestion('');
+  //   } catch (err) {
+  //     console.error(`Error while adding question: ${err}`);
+  //   }
+  // };
   const addNewQuestion = async () => {
     try {
-      // Вызовите функцию addQuestion с переданными данными
-      await addQuestion({ text: question });
-      // Очистить вопрос после добавления
-      setQuestion('');
+      console.log('Sending question:', question); // Лог для проверки, что данные отправляются
+      const response = await addQuestion({ text: question });
+      console.log('Response from server:', response);
     } catch (err) {
       console.error(`Error while adding question: ${err}`);
     }
   };
-
 
   return <>
     <Paper className={cl.wrapp}>

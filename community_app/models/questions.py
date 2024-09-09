@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from community_app.extensions import db  # Импорт из extensions
 
 
