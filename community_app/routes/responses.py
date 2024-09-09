@@ -4,7 +4,7 @@ from community_app.extensions import db  # Импорт из extensions
 from community_app.models.questions import Statistik, Question
 from community_app.models.response import Response
 
-response_bp = Blueprint('responses', __name__, url_prefix='/responses')
+response_bp = Blueprint('responses', __name__, url_prefix='/api/responses')
 
 
 @response_bp.route('/', methods=['GET'])  # url/questions
