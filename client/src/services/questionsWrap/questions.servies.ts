@@ -54,11 +54,11 @@ const questionsService = baseApi.injectEndpoints({
       //     }
       //   }, invalidatesTags: ['Decks']
       // }),
-      // removeDeck: builder.mutation<void, {id: string}>({
-      //   query(id) {
-      //     return {method: 'DELETE', url: `v1/decks/${id}`,}
-      //   }, invalidatesTags: ['Decks']
-      // }),
+      removeQuestion: builder.mutation<void, {id: number}>({
+        query(id) {
+          return {method: 'DELETE', url: `/questions/${id}`,}
+        }, invalidatesTags: ['Questions']
+      }),
       // getDeckById: builder.query<GetDecksResponse, GetDeckByIdArgs>({
       //   query: ({id}) => {
       //     return {url: `v1/decks/${id}`,}
@@ -74,5 +74,5 @@ const questionsService = baseApi.injectEndpoints({
 })
 
 // export const {useRemoveDeckMutation, useCreateDeckMutation, useGetDeckByIdQuery, useGetDecksQuery, useUpdateDeckMutation} = decksServiece
-export const {useCreateQuestionsMutation ,useGetDecksQuery} = questionsService
+export const {useCreateQuestionsMutation ,useGetDecksQuery, useRemoveQuestionMutation} = questionsService
 

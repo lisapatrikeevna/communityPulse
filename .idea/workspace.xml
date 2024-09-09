@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="add pydantic for validate(start)">
+    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="add Questions list, delete in Category list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/category/category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/category/category.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/category/categoryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/category/categoryList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/questions/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/questions/questions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/questions/questionsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/questions/questionsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/base-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/base-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/base-query-with-reauth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/base-query-with-reauth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/categoriesWrap/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/categoriesWrap/category.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/services/questionsWrap/questions.servies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/questionsWrap/questions.servies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/models/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/models/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/routes/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/routes/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/schemas/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/schemas/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/databaseCommunuity.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/databaseCommunuity.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725870558405</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add Questions list, delete in Category list">
+      <option name="closed" value="true" />
+      <created>1725921381736</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725921381736</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +219,8 @@
     <MESSAGE value="fix sintacsis mistakes" />
     <MESSAGE value="add add_response logik" />
     <MESSAGE value="add pydantic for validate(start)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pydantic for validate(start)" />
+    <MESSAGE value="add Questions list, delete in Category list" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Questions list, delete in Category list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
