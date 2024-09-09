@@ -7,39 +7,32 @@ import { useCreateCategoryMutation} from "../../services/categoriesWrap/category
 const Category = () => {
   const [category, setCategory] = useState('');
   const [addCategory, {isLoading, isError }] = useCreateCategoryMutation()
-
-  // const addNewCategory = async () => {
-  //   try {
-  //     // Вызовите функцию addCategory с переданными данными
-  //     await addCategory({ text: Category });
-  //     // Очистить вопрос после добавления
-  //     // setCategory('');
-  //   } catch (err) {
-  //     console.error(`Error while adding Category: ${err}`);
-  //   }
-  // };
+  
   const addNewCategory = async () => {
     try {
       console.log('Sending Category:', category); // Лог для проверки
-      const response = await addCategory({ name: category }).unwrap()
-      // if (response.statusCodes ) {
-      //   console.log(response.status);
-      //   // Очищаем информацию
-      //   setCategory('');
-      // }
-      if (response.meta?.response?.status >= 200 && response.meta?.response?.status < 300) {
-        console.log('Status code:', response.meta.response.status);
+      const response = await addCategory({ name: category })
+      if (!isError ) {
+      // if (response.status ) {
+        console.log("if (response.status )",response.status);
         // Очищаем информацию
         setCategory('');
       }
-      console.log('Response from server:', response);
+      if (response.meta?.response?.status) {
+        debugger
+      // if (response.meta?.response?.status >= 200 && response.meta?.response?.status < 300) {
+        console.log('if Status code:', response.meta.response.status);
+        // Очищаем информацию
+        setCategory('');
+      }
+      console.log( 'response', response);
     } catch (err) {
       console.error(`Error while adding Category: ${err}`);  // Проверка наличия поля status
     }
   };
 
   return <>
-    <Paper className={cl.wrapp}>
+    <Paper className={cl.wrapp} sx={{mt: 3}}>
       <p>add Category </p>
       <Box className={cl.inputWrap}>
         <TextField

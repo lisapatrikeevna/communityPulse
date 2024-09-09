@@ -5,8 +5,10 @@ import {
   fetchBaseQuery,
 } from '@reduxjs/toolkit/query/react';
 
+
+// base-query-with-reauth.ts
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://127.0.0.1:5000/api',
+  baseUrl: 'http://127.0.0.1:5000/api/',
   credentials: 'include',
 });
 
@@ -22,3 +24,5 @@ export const baseQueryWithReauth: BaseQueryFn<
     throw error;
   }
 };
+
+

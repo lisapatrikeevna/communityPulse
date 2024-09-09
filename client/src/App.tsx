@@ -3,7 +3,7 @@ import { store } from "./services/store.ts";
 import Questions from "./components/questions/questions.tsx";
 import Category from "./components/category/category.tsx";
 import CategoryList from "./components/category/categoryList.tsx";
-// import QuestionsList from "./components/questionsList.tsx";
+import QuestionsList from "./components/questions/questionsList.tsx";
 
 // app.tsx
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
     <CategoryList/>
     <Category/>
     <Questions/>
-    {/*<QuestionsList/>*/}
+    <QuestionsList/>
   </Provider>   )
 }
 

@@ -1,18 +1,20 @@
 import { baseApi } from "../base-api.ts";
 
-export type CreatQuestionsArgs = {
-  id?: number
+export type CreatQuestionsArgsType = {
+  text: string
+  category_id: number
+}
+export interface QuestionType extends CreatQuestionsArgsType {
+  id: number
   text: string
   responses?: any
-  created_at?: any
-  category_id?: any
+  created_at: any  //data.now
 }
-const baseUrl = 'http://localhost:5000/api'
 
 const questionsService = baseApi.injectEndpoints({
   endpoints: builder => {
     return {
-      createQuestions: builder.mutation<void, CreatQuestionsArgs>({
+      createQuestions: builder.mutation<void, CreatQuestionsArgsType>({
         query: arg => {
           // return {
           //   body: arg,
@@ -26,7 +28,7 @@ const questionsService = baseApi.injectEndpoints({
           const request = {
             body: JSON.stringify(arg),  // Не забудьте сериализовать тело запроса
             method: 'POST',
-            url: `${baseUrl}/questions/add`,
+            url: '/questions/add',
             headers: { 'Content-Type': 'application/json' }
           };
 
@@ -35,7 +37,8 @@ const questionsService = baseApi.injectEndpoints({
 
           return request;
         }, invalidatesTags: ['Questions'],
-      }), // updateDeck: builder.mutation<void, {id: string, body: UpdateDecksArgs}>({
+      }),
+      // updateDeck: builder.mutation<void, {id: string, body: UpdateDecksArgs}>({
       //   //pissimistik Update
       //   // onQueryStarted: async({id: string, ...body}, {dispatch, getState, queryFulfilled}) => {
       //   //   // onQueryStarted:async (arg: QueryArg, api: MutationLifecycleApi<QueryArg, BaseQuery, ResultType, ReducerPath>): Promise<void> | void =>{
@@ -61,15 +64,15 @@ const questionsService = baseApi.injectEndpoints({
       //     return {url: `v1/decks/${id}`,}
       //   },
       // }),
-      // getDecks: builder.query<GetDecksResponse, GetDecksArgs | void>({
-      //   query: args => {
-      //     return {params: args ?? {}, url: `v1/decks`,}
-      //   }, providesTags: ['Decks'],
-      // }),
+      getDecks: builder.query<QuestionType,  void>({
+        query:()=> {
+          return { url: '/questions/',}
+        }, providesTags: ['Questions'],
+      }),
     }
   },
 })
 
 // export const {useRemoveDeckMutation, useCreateDeckMutation, useGetDeckByIdQuery, useGetDecksQuery, useUpdateDeckMutation} = decksServiece
-export const {useCreateQuestionsMutation} = questionsService
+export const {useCreateQuestionsMutation ,useGetDecksQuery} = questionsService
 

@@ -28,7 +28,7 @@ const categoryService = baseApi.injectEndpoints({
           const request = {
             body: JSON.stringify(arg),  // Не забудьте сериализовать тело запроса
             method: 'POST',
-            url: `${baseUrl}/add`,
+            url: 'category/add',
             headers: { 'Content-Type': 'application/json' }
           };
 
@@ -36,7 +36,7 @@ const categoryService = baseApi.injectEndpoints({
           console.log('Request prepared:', request);
 
           return request;
-        }, invalidatesTags: ['Questions'],
+        }, invalidatesTags: ['Category'],
       }),
       updateCategory: builder.mutation<void, {id: string, body: string}>({
         //pissimistik Update
@@ -54,15 +54,16 @@ const categoryService = baseApi.injectEndpoints({
           }
         }, invalidatesTags: ['Category']
       }),
-      removeCategory: builder.mutation<void, {id: string}>({
+      removeCategory: builder.mutation<void, {id: number}>({
         query(id) {
-          return {method: 'DELETE', url: `${baseUrl}/${id}`,}
+          console.log('url', `category/delete/id:${id}`);
+          return {method: 'DELETE', url: `category/delete/${id}`,}
         }, invalidatesTags: ['Category']
       }),
       getCategory: builder.query<any,any | void>({
       // getDecks: builder.query<GetDecksResponse, GetDecksArgs | void>({
         query: () => {
-          return {method: 'GET', url: `${baseUrl}/`,}
+          return {method: 'GET', url: 'category/',}
         }, providesTags: ['Category'],
       }),
     }
@@ -70,5 +71,5 @@ const categoryService = baseApi.injectEndpoints({
 })
 
 // export const {useRemoveDeckMutation, useCreateDeckMutation, useGetDeckByIdQuery, useGetDecksQuery, useUpdateDeckMutation} = decksServiece
-export const {useCreateCategoryMutation, useGetCategoryQuery} = categoryService
+export const {useCreateCategoryMutation, useGetCategoryQuery, useRemoveCategoryMutation} = categoryService
 

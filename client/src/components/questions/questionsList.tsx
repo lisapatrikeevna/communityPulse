@@ -1,26 +1,25 @@
-import { useGetQuestionsQuery } from "../../services/questions-api.ts";
+import { QuestionType, useGetDecksQuery } from "../../services/questionsWrap/questions.servies.ts";
+import { Paper } from "@mui/material";
 
 
-interface Question {
-  id: number; // или string, в зависимости от вашего API
-  text: string;
-}
+
 
 const QuestionsList = () => {
-  const { data: questions, error, isLoading } = useGetQuestionsQuery();
+  const { data: questions, error, isLoading } = useGetDecksQuery();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {JSON.stringify(error)}</div>;
-  // if (error) return <div>Error loading questions: {error.message}</div>;
+  if (isLoading) return <Paper>Loading...</Paper>;
+  if (error) return <Paper>Error: {JSON.stringify(error)}</Paper>;
 
-  return (<div>
-      <h1>Questions</h1>
+  console.log("questions", questions);
+
+  return (<Paper>
+      <h1>Questions list</h1>
       <ul>
-        {questions?.map((question: Question) => (
+        {questions.map((question: QuestionType) => (
           <li key={question.id}>{question.text}</li>
         ))}
       </ul>
-    </div>
+    </Paper>
   );
 };
 
