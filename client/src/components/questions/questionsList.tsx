@@ -1,7 +1,6 @@
 import { QuestionType, useGetDecksQuery, useRemoveQuestionMutation } from "../../services/questionsWrap/questions.servies.ts";
 import { IconButton, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useRemoveCategoryMutation } from "../../services/categoriesWrap/category.service.ts";
 
 
 
@@ -18,15 +17,15 @@ const QuestionsList = () => {
   if (isLoading) return <Paper>Loading...</Paper>;
   if (error) return <Paper>Error: {JSON.stringify(error)}</Paper>;
 
-  console.log("questions", questions);
+  // console.log("questions", questions);
 
   return (<Paper>
       <Typography variant="h2">Questions list</Typography>
       <List>
-        {questions.map((question: QuestionType) => (
+        {questions && questions.map((question: QuestionType) => (
           <ListItem key={question.id}>
-            <ListItemText primary={question.text} />
-
+            <ListItemText primary={[question.text, `(id : ${question.id})`]} />
+            <ListItemText primary={["category_id :",question.category_id]} />
             <IconButton aria-label="delete" size="small" onClick={() => removeQuestion(question.id)}>
               <DeleteIcon fontSize="small"/>
             </IconButton>

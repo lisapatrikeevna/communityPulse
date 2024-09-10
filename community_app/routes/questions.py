@@ -64,11 +64,14 @@ def update_question(question_id):
 
 @questions_bp.route('delete/<int:id>', methods=['DELETE'])
 def delete_question(id):
+    print(id)
     """Удаление конкретного вопроса по его ID."""
     question = Question.query.get(id)
-    if question is None:
-        return jsonify({'message': "Вопрос с таким ID не найден"}), 404
     print("question ", question)
+    if question is None:
+        print("if question ", question)
+        return jsonify({'message': "Вопрос с таким ID не найден"}), 404
+
 
     db.session.delete(question)
     db.session.commit()

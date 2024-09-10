@@ -56,7 +56,7 @@ const questionsService = baseApi.injectEndpoints({
       // }),
       removeQuestion: builder.mutation<void, {id: number}>({
         query(id) {
-          return {method: 'DELETE', url: `/questions/${id}`,}
+          return {method: 'DELETE', url: `/questions/delete/${id}`,}
         }, invalidatesTags: ['Questions']
       }),
       // getDeckById: builder.query<GetDecksResponse, GetDeckByIdArgs>({
