@@ -15,11 +15,14 @@ const Questions = () => {
     typeof categoryId=='number'&& addQuestion({text: question, category_id: categoryId})
     .then((res) => {
       console.log("removeCat", res);
+      if (!isError){
+
       // Очистить после добавления
       setCategoryId(null)
-      // setQuestion('')
+      setQuestion('')
       console.log("Category ID after reset: ", categoryId);
       // setCategoryId(null)
+      }
     })
     .catch(err => {
       console.error(`Error while adding question: ${err}`);
