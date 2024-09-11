@@ -10,35 +10,23 @@ import { QuestionType } from "../../services/questionsWrap/questions.servies.ts"
 type propsType = {
   open: boolean
   handleClose: () => void
-  // text: string
-  // id:number
   question:QuestionType
   updateQuestion:(body:QuestionType) => void
 }
+
 const UpdateModal = ({open, handleClose, question, ...props}: propsType) => {
   const [inputValue, setInputValue] = useState(question.text);
-  useEffect(() => {setInputValue(question.text)},[])
+  // useEffect(() => {setInputValue(question.text)},[])
   const handleUpdate = () => {
-    let body:QuestionType  ={
-      id:question.id ,
-      text:inputValue  ,
-      responses:question.responses   ,
-      created_at:question.created_at,
-    }
-    props.updateQuestion(body)
+    props.updateQuestion({...question, text: inputValue} )
     setInputValue('')
     handleClose()
   }
 
 
 
-  return (<Modal
-    aria-labelledby="unstyled-modal-title"
-    aria-describedby="unstyled-modal-description"
-    open={open}
-    onClose={handleClose}
-    slots={{ backdrop: StyledBackdrop }}
-  >
+  return (<Modal aria-labelledby="unstyled-modal-title" aria-describedby="unstyled-modal-description"
+    open={open} onClose={handleClose} slots={{ backdrop: StyledBackdrop }}>
     <ModalContent sx={{width: 400}}>
       
       <h2 id="unstyled-modal-title" className="modal-title">

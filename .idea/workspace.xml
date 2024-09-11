@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="fix /questions/delete/${id}">
-      <change afterPath="$PROJECT_DIR$/client/src/components/questions/updateModal.tsx" afterDir="false" />
+    <list default="true" id="13304102-b47a-4a8e-99a3-59d986ac4d34" name="Changes" comment="add modal for update question">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/questions/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/questions/questions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/questions/questionsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/questions/questionsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/questions/updateModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/questions/updateModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/services/questionsWrap/questions.servies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/questionsWrap/questions.servies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community_app/models/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/community_app/models/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/databaseCommunuity.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/databaseCommunuity.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -159,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725274604301</updated>
       <workItem from="1725274608095" duration="19744000" />
-      <workItem from="1726061717818" duration="2918000" />
+      <workItem from="1726061717818" duration="7265000" />
     </task>
     <task id="LOCAL-00001" summary="add react">
       <option name="closed" value="true" />
@@ -233,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726002630177</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add modal for update question">
+      <option name="closed" value="true" />
+      <created>1726066093247</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726066093247</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +272,8 @@
     <MESSAGE value="add Questions list, delete in Category list" />
     <MESSAGE value="add style" />
     <MESSAGE value="fix /questions/delete/${id}" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix /questions/delete/${id}" />
+    <MESSAGE value="add modal for update question" />
+    <option name="LAST_COMMIT_MESSAGE" value="add modal for update question" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -323,18 +327,13 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/services/questionsWrap/questions.servies.ts</url>
-          <line>35</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/services/categoriesWrap/category.service.ts</url>
           <line>35</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/components/questions/updateModal.tsx</url>
-          <line>78</line>
+          <line>72</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>

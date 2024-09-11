@@ -6,6 +6,8 @@ import { useState } from "react";
 import UpdateModal from "./updateModal.tsx";
 
 
+
+// questionsList.tsx
 const QuestionsList = () => {
   const {data: questions, error, isLoading} = useGetDecksQuery();
   const [deleteQuest, {isLoading: isDeleting, isError: isDeleteError}] = useRemoveQuestionMutation()
@@ -27,11 +29,11 @@ const QuestionsList = () => {
     }).catch(err => console.log(err));
   }
   const handleUpdate = (body:QuestionType) => {
-    // updateQuest(body).then((res) => {
-    //   console.log("res ", res);
-    // }).catch((err) => {
-    //   err.log(err)
-    // })
+    updateQuest(body).then((res) => {
+      console.log("res ", res);
+    }).catch((err) => {
+      err.log(err)
+    })
   }
 
 
@@ -47,13 +49,13 @@ const QuestionsList = () => {
       <List>
         {questions && questions.map((question: QuestionType) => (<ListItem key={question.id}>
             <Stack direction="row" spacing={2} key={question.id}>
-              <ListItemText primary={[question.text, `(id : ${question.id})`]}/>
+              <ListItemText primary={[question.text, ` (id : ${question.id})`]}/>
               <IconButton onClick={()=>handleOpen(question)}>
               {/*<IconButton onClick={() => handleUpdate(question.id)}>*/}
 	 <EditIcon/>
               </IconButton>
             </Stack>
-            <ListItemText primary={["category_id :", question.id]}/>
+            <ListItemText primary={["category_id :", question.category_id]}/>
             <IconButton aria-label="delete" size="small" onClick={() => removeQuestion(question.id)}>
               <DeleteIcon fontSize="small"/>
             </IconButton>

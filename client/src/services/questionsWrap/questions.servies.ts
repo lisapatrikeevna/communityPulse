@@ -2,13 +2,14 @@ import { baseApi } from "../base-api.ts";
 
 export type CreatQuestionsArgsType = {
   text: string
-  id: number
+  category_id: number
 }
 export interface QuestionType extends CreatQuestionsArgsType {
-  // id: number
+  id: number
   // text: string
   responses?: any
   created_at: any  //data.now
+  // category_id:number
 }
 
 const questionsService = baseApi.injectEndpoints({
@@ -16,26 +17,20 @@ const questionsService = baseApi.injectEndpoints({
     return {
       createQuestions: builder.mutation<void, CreatQuestionsArgsType>({
         query: arg => {
-          // return {
-          //   body: arg,
-          //   method: 'POST',
-          //   url: `${baseUrl}/questions/add`,
-          //   headers: { 'Content-Type': 'application/json' }
-          // };
-          // Лог аргументов запроса
-          console.log('Arguments received in createQuestions:', arg);
-
-          const request = {
+          return {
             body: JSON.stringify(arg),  // Не забудьте сериализовать тело запроса
             method: 'POST',
             url: '/questions/add',
             headers: { 'Content-Type': 'application/json' }
           };
-
-          // Лог перед отправкой запроса
-          console.log('Request prepared:', request);
-
-          return request;
+          // const request = {
+          //   body: JSON.stringify(arg),  // Не забудьте сериализовать тело запроса
+          //   method: 'POST',
+          //   url: '/questions/add',
+          //   headers: { 'Content-Type': 'application/json' }
+          // };
+          //
+          // return request;
         }, invalidatesTags: ['Questions'],
       }),
       updateQuestions: builder.mutation<void, {body:QuestionType}>({
@@ -48,10 +43,11 @@ const questionsService = baseApi.injectEndpoints({
         //
         //   await queryFulfilled
         // },
-        query: ({body}) => {
+
+        query: body => {
           return {
-            body, method: 'PUT', url: `/questions/update/${body.id}`,
-          }
+            body:JSON.stringify(body), method: 'PUT', url: `/questions/update/${body.id}`,  headers: { 'Content-Type': 'application/json'},
+            }
         }, invalidatesTags: ['Questions']
       }),
       removeQuestion: builder.mutation<void, {id: number}>({
