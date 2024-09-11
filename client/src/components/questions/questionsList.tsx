@@ -12,7 +12,6 @@ const QuestionsList = () => {
   const {data: questions, error, isLoading} = useGetDecksQuery();
   const [deleteQuest, {isLoading: isDeleting, isError: isDeleteError}] = useRemoveQuestionMutation()
   const [updateQuest, {isLoading: isUpdating, isError: updateErr}] = useUpdateQuestionsMutation()
-
   const [open, setOpen] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState<null|QuestionType>();
   const handleOpen = (question:QuestionType) => {
@@ -51,7 +50,6 @@ const QuestionsList = () => {
             <Stack direction="row" spacing={2} key={question.id}>
               <ListItemText primary={[question.text, ` (id : ${question.id})`]}/>
               <IconButton onClick={()=>handleOpen(question)}>
-              {/*<IconButton onClick={() => handleUpdate(question.id)}>*/}
 	 <EditIcon/>
               </IconButton>
             </Stack>
@@ -59,8 +57,6 @@ const QuestionsList = () => {
             <IconButton aria-label="delete" size="small" onClick={() => removeQuestion(question.id)}>
               <DeleteIcon fontSize="small"/>
             </IconButton>
-
-
           </ListItem>))}
       </List>
       {error && <Paper>Error: {JSON.stringify(error)}</Paper>}
@@ -68,7 +64,8 @@ const QuestionsList = () => {
       {isDeleteError && <Paper>Error: {JSON.stringify(isDeleteError)}</Paper>}
 
     {currentQuestion && <UpdateModal open={open} handleClose={handleClose} question={currentQuestion} updateQuestion={handleUpdate} />     }
-    </Paper>);
+
+  </Paper>);
 };
 
 export default QuestionsList;

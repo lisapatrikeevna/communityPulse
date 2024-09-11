@@ -1,7 +1,9 @@
-from flask import Blueprint
 from community_app.extensions import db  # Импорт из extensions
 from community_app.models.category import Category  # Импортируем модель категории
 from flask import jsonify, request, make_response, Blueprint
+
+from community_app.schemas.category import CategoryResponse
+
 # routes/category.py
 category_bp = Blueprint('category', __name__, url_prefix='/api/category')
 
@@ -33,7 +35,7 @@ def add_new_category():
     return jsonify({"message": "New category added", "category_id": new_category.id}), 201
 
 
-@category_bp.route('delete/<int:id>', methods=['DELETE'])
+@category_bp.route('/delete/<int:id>', methods=['DELETE'])
 def delete_category(id):
     """Удаление конкретного вопроса по его ID."""
     category = Category.query.get(id)
@@ -45,7 +47,19 @@ def delete_category(id):
     return jsonify({'message': f"Вопрос с ID {id} удален"}), 200
 
 
+@category_bp.route('/update/<int:id>', methods=['PUT'])
+def update_category(id):
+    category: Category = Category.query.get(id)
+    if not category:
+        return make_response(jsonify({"message": "NO CATEGORY FOUND"}), 404)
 
+    request_data = request.get_json()
+    if 'name' in request_data:
+        category.name = request_data['name']
+        db.session.commit()
+        return make_response(jsonify(CategoryResponse.from_orm(category).dict()), 200)
+    else:
+        return make_response(jsonify({"message": "NO DATA PROVIDED"}), 204)
 
 
 

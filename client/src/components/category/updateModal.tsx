@@ -2,22 +2,22 @@ import clsx from 'clsx';
 import { css, styled } from '@mui/system';
 import { Modal as BaseModal } from '@mui/base/Modal';
 import { ChangeEvent, forwardRef, useEffect, useState } from "react";
-import cl from "./question.module.scss";
+import cl from "./category.module.scss";
 import { Button, IconButton, Stack, TextField } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { QuestionType } from "../../services/questionsWrap/questions.servies.ts";
+import { CategoryType } from "../../services/categoriesWrap/category.service.ts";
 
 type propsType = {
   open: boolean
   handleClose: () => void
-  question:QuestionType
-  updateQuestion:(body:QuestionType) => void
+  category:CategoryType
+  updateCategory:(body:CategoryType) => void
 }
 
-const UpdateModal = ({open, handleClose, question, ...props}: propsType) => {
-  const [inputValue, setInputValue] = useState(question.text);
+const UpdateModal = ({open, handleClose, category, ...props}: propsType) => {
+  const [inputValue, setInputValue] = useState(category.name);
   const handleUpdate = () => {
-    props.updateQuestion({...question, text: inputValue} )
+    props.updateCategory({...category, name: inputValue} )
     setInputValue('')
     handleClose()
   }
@@ -29,17 +29,17 @@ const UpdateModal = ({open, handleClose, question, ...props}: propsType) => {
     <ModalContent sx={{width: 400}}>
       
       <h2 id="unstyled-modal-title" className="modal-title">
-        Update Text Question with id {question.id} 
+        Update Text Category with id {category.id}
       </h2>
       <TextField
-        className={cl.newQuestion}
+        className={cl.newCategory}
         required
         id="outlined-required"
-        label="change Question text"
+        label="change Category text"
         value={inputValue}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setInputValue(e.currentTarget.value)}
       />
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} sx={{alignItems: "center",}}>
         <IconButton onClick={handleUpdate}>
           <EditIcon/>
         </IconButton>
