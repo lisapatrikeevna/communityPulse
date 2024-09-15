@@ -73,7 +73,7 @@ const ResponsesList = () => {
     {updateErr && <Paper>Error: {JSON.stringify(updateErr)}</Paper>}
     {isDeleteError && <Paper>Error: {JSON.stringify(isDeleteError)}</Paper>}
 
-    {/*{currentResponse && <UpdateModal open={open} handleClose={handleClose} question={currentResponse} updateResponse={handleUpdate}/>}*/}
+    {currentResponse && <UpdateModal open={open} handleClose={handleClose} data={currentResponse} updateResponse={handleUpdate}/>}
 
   </Paper>);
 };
