@@ -3,16 +3,24 @@ import { baseApi } from "../base-api.ts";
 
 export interface ResponseType extends CreatResponseArgs{
   id: number
-  // text: string
-  // question_id?:number
-  // is_agree?:boolean
 }
 export type CreatResponseArgs = {
   text: string
   question_id:number
   is_agree:boolean
 }
+export type GetResponsesType = {
+  agree_count: number;
+  disagree_count: number;
+  question_id: number;
+  responses: Array<ResponseDetailType>;
+};
 
+export interface ResponseDetailType {
+  id: number;
+  is_agree: boolean;
+  text: string;
+}
 
 const responseService = baseApi.injectEndpoints({
   endpoints: builder => {
@@ -39,7 +47,7 @@ const responseService = baseApi.injectEndpoints({
           return {method: 'DELETE', url: `responses/delete/${id}`,}
         }, invalidatesTags: ['Response']
       }),
-      getResponse: builder.query<any | void>({
+      getResponse: builder.query<GetResponsesType | void>({
         query: () => {
           return {method: 'GET', url: '/responses/',}
         }, providesTags: ['Response'],

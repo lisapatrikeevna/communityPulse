@@ -1,9 +1,9 @@
-import { IconButton, LinearProgress, List, ListItem, ListItemText, Paper, Stack, Typography } from "@mui/material";
+import { Box, IconButton, LinearProgress, List, ListItem, ListItemText, Paper, Stack, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from "react";
 import UpdateModal from "./updateModal.tsx";
-import { useGetResponseQuery, useRemoveResponseMutation, useUpdateResponseMutation,ResponseType } from "../../services/responseWrap/response.service.ts";
+import { useGetResponseQuery, useRemoveResponseMutation, useUpdateResponseMutation, ResponseType, GetResponsesType, ResponseDetailType } from "../../services/responseWrap/response.service.ts";
 
 
 // responsesList.tsx
@@ -12,10 +12,10 @@ const ResponsesList = () => {
   const [deleteResponse, {isLoading: isDeleting, isError: isDeleteError}] = useRemoveResponseMutation()
   const [updateQuest, {isLoading: isUpdating, isError: updateErr}] = useUpdateResponseMutation()
   const [open, setOpen] = useState(false);
-  const [currentResponse, setCurrentResponse] = useState<null | ResponseType>(null);
-  const handleOpen = (question: ResponseType) => {
+  const [currentResponse, setCurrentResponse] = useState<null | ResponseDetailType>(null);
+  const handleOpen = (response: ResponseDetailType) => {
     setOpen(true)
-    setCurrentResponse(question)
+    setCurrentResponse(response)
   };
   const handleClose = () => {
     setOpen(false);
@@ -44,19 +44,30 @@ const ResponsesList = () => {
       {(isLoading || isUpdating) && <LinearProgress color="success"/>}
       {isLoading && <LinearProgress color="inherit"/>}
     </Stack>
+
     <List>
-      {responses && responses.map((response: ResponseType) => (<ListItem key={response.id}>
-        <Stack direction="row" spacing={2} key={response.id}>
-          <ListItemText primary={[response.text, ` (id : ${response.id})`]}/>
-        </Stack>
-        <ListItemText primary={["category_id :", response.question_id]}/>
-        <IconButton onClick={() => handleOpen(response)}>
-          <EditIcon/>
-        </IconButton>
-        <IconButton aria-label="delete" size="small" onClick={() => removeResponse(response.id)}>
-          <DeleteIcon fontSize="small"/>
-        </IconButton>
-      </ListItem>))}
+      {responses && responses.map((res: GetResponsesType) => (
+        <ListItem key={res.question_id}>
+          <ListItemText primary={`Agree Count: ${res.agree_count}`} />
+          <ListItemText primary={`Disagree Count: ${res.disagree_count}`} />
+          <List>
+            {res.responses.map((response) => (
+              <ListItem key={response.id}>
+                <ListItemText primary={`(response id: ${response.id}) ${response.text}`} />
+                <ListItemText primary={`is_agree: ${response.is_agree}`} />
+                <Stack direction="row" spacing={2}>
+                  <IconButton onClick={() => handleOpen(response)}>
+                    <EditIcon />
+                  </IconButton>
+                  <IconButton aria-label="delete" size="small" onClick={() => removeResponse(response.id)}>
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                </Stack>
+              </ListItem>
+            ))}
+          </List>
+        </ListItem>
+      ))}
     </List>
     {error && <Paper>Error: {JSON.stringify(error)}</Paper>}
     {updateErr && <Paper>Error: {JSON.stringify(updateErr)}</Paper>}
