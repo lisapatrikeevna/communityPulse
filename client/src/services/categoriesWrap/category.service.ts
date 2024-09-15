@@ -4,6 +4,7 @@ import { baseApi } from "../base-api.ts";
 export type CategoryType = {
   id: number
   name: string
+  questions:any
 }
 export type CreatCategoryArgs = {
   name: string

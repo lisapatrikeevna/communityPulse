@@ -9,6 +9,7 @@ import { useCreateQuestionsMutation } from "../../services/questionsWrap/questio
 const Questions = () => {
   const [question, setQuestion] = useState('');
   const [categoryId, setCategoryId] = useState<number|null>(null);
+  console.log("categoryId", categoryId);
   const [addQuestion, {isLoading, isError}] = useCreateQuestionsMutation()
   const addNewQuestion = () => {
     // Вызовите функцию addQuestion с переданными данными
@@ -21,7 +22,6 @@ const Questions = () => {
       setCategoryId(null)
       setQuestion('')
       console.log("Category ID after reset: ", categoryId);
-      // setCategoryId(null)
       }
     })
     .catch(err => {
@@ -55,7 +55,7 @@ const Questions = () => {
           required
           id="outlined-required"
           label="category id"
-          value={categoryId}
+          value={categoryId? categoryId: ''}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setCategoryId(+e.currentTarget.value)}
         />
         <Button className={cl.addQuestion} variant="outlined" startIcon={<SendIcon/>} disabled={isLoading} onClick={addNewQuestion} fullWidth={true}>

@@ -1,0 +1,16 @@
+.wrapp {
+  padding: 20px 10px;
+  .inputWrap{
+    display: flex;
+    justify-content: space-between;
+    .newQuestion{
+      width: 60%;
+    }
+    .addQuestion{
+      width: 35%;
+    }
+  }
+}
+.error{
+  color: red;
+}

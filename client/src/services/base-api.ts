@@ -5,7 +5,7 @@ import { baseQueryWithReauth } from "./base-query-with-reauth.ts";
 // fetchBaseQuery-выполняет функции axios
 export const baseApi = createApi({
   reducerPath: 'baseApi',
-  tagTypes: ['Questions', 'Responses', 'Category'],
+  tagTypes: ['Questions', 'Response', 'Category'],
   baseQuery: baseQueryWithReauth, endpoints: () => ({}),
 })
 

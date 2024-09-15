@@ -6,10 +6,8 @@ export type CreatQuestionsArgsType = {
 }
 export interface QuestionType extends CreatQuestionsArgsType {
   id: number
-  // text: string
   responses?: any
   created_at: any  //data.now
-  // category_id:number
 }
 
 const questionsService = baseApi.injectEndpoints({
@@ -55,11 +53,6 @@ const questionsService = baseApi.injectEndpoints({
           return {method: 'DELETE', url: `/questions/delete/${id}`,}
         }, invalidatesTags: ['Questions']
       }),
-      // getDeckById: builder.query<GetDecksResponse, GetDeckByIdArgs>({
-      //   query: ({id}) => {
-      //     return {url: `v1/decks/${id}`,}
-      //   },
-      // }),
       getDecks: builder.query<QuestionType,  void>({
         query:()=> {
           return { url: '/questions/',}

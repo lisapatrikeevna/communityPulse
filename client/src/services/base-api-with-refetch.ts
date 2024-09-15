@@ -26,7 +26,7 @@ export const customFetchBase: BaseQueryFn<string | FetchArgs, unknown, FetchBase
 
         try {
           const refreshResult = await baseQuery(
-            { url: 'v1/auth/refresh-token', method: 'POST' }, api, extraOptions
+            { url: 'api/refresh-token', method: 'POST' }, api, extraOptions
           )
 
           if (refreshResult?.meta?.response?.status === 204) {

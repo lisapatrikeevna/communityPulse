@@ -7,14 +7,14 @@ import { useCreateCategoryMutation} from "../../services/categoriesWrap/category
 const Category = () => {
   const [category, setCategory] = useState('');
   const [addCategory, {isLoading, isError }] = useCreateCategoryMutation()
-  
+
   const addNewCategory = async () => {
     try {
-      console.log('Sending Category:', category); // Лог для проверки
       const response = await addCategory({ name: category })
       if (!isError ) {
       // if (response.status ) {
-        console.log("if (response.status )",response.status);
+        let status = response.status;
+        console.log("if (response.status )",status);
         // Очищаем информацию
         setCategory('');
       }
